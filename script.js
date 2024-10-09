@@ -22,3 +22,10 @@ btn.addEventListener("mouseover", (e) => {
   btn.style.setProperty("--xPos", x + "px");
   btn.style.setProperty("--yPos", y + "px");
 });
+
+// REMOVE THE NOTES WHEN DELETED
+notesContainer.addEventListener("click", (e) => {
+  if (e.target.tagName === "IMG") {
+    e.target.parentElement.remove();
+  }
+});
