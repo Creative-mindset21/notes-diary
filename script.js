@@ -1,5 +1,6 @@
 const createBtn = document.getElementById("create-btn");
 const notesContainer = document.querySelector(".notes-container");
+const btn = document.getElementById("create-btn");
 
 // DISPLAY THE INPUT NOTE SECTION
 createBtn.addEventListener("click", () => {
@@ -11,4 +12,13 @@ createBtn.addEventListener("click", () => {
   note.classList = "input-note";
 
   notesContainer.appendChild(note).appendChild(img);
+});
+
+// BUTTON RIPPLE EFFECT
+btn.addEventListener("mouseover", (e) => {
+  const x = e.pageX - btn.offsetLeft;
+  const y = e.pageY - btn.offsetTop;
+
+  btn.style.setProperty("--xPos", x + "px");
+  btn.style.setProperty("--yPos", y + "px");
 });
